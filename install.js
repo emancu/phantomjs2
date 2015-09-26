@@ -84,7 +84,8 @@ whichDeferred.promise
   })
   .then(function (stdout) {
     var version = stdout.trim()
-    if (helper.version == version) {
+    var verRegExp = new RegExp('^' + helper.version);
+    if (verRegExp.test(version)) {
       writeLocationFile(phantomPath);
       console.log('PhantomJS is already installed at', phantomPath + '.')
       exit(0)
@@ -106,9 +107,10 @@ whichDeferred.promise
 
     // Can't use a global version so start a download.
     if (process.platform === 'linux' && process.arch === 'x64') {
-      downloadUrl += 'u1404-x86_64.zip'
+      downloadUrl += '-' + helper.build
+      downloadUrl += '-' + 'u1404-x86_64.zip'
     } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
-      downloadUrl += 'macosx.zip'
+      downloadUrl = 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-' + helper.version + '-macosx.zip'
     } else {
       console.error('Unexpected platform or architecture:', process.platform, process.arch)
       exit(1)
