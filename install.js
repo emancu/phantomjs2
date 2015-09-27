@@ -107,7 +107,7 @@ whichDeferred.promise
 
     // Can't use a global version so start a download.
     if (process.platform === 'linux' && process.arch === 'x64') {
-      downloadUrl += '-' + helper.build
+      downloadUrl += helper.build
       downloadUrl += '-' + 'u1404-x86_64.zip'
     } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
       downloadUrl = 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-' + helper.version + '-macosx.zip'
