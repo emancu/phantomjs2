@@ -107,10 +107,9 @@ whichDeferred.promise
 
     // Can't use a global version so start a download.
     if (process.platform === 'linux' && process.arch === 'x64') {
-      downloadUrl += helper.build
-      downloadUrl += '-' + 'u1404-x86_64.zip'
+        downloadUrl = 'https://s3.amazonaws.com/phantomjs-that-works/phantomjs-2.0.0-20150528-u1404-x86_64.zip'; 
     } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
-      downloadUrl = 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-' + helper.version + '-macosx.zip'
+      downloadUrl = 'https://s3.amazonaws.com/phantomjs-that-works/phantomjs-2.0.0-macosx.zip';  
     } else {
       console.error('Unexpected platform or architecture:', process.platform, process.arch)
       exit(1)
