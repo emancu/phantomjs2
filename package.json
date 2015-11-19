@@ -1,5 +1,5 @@
 {
-  "name": "@knotchlabs/phantomjs2",
+  "name": "phantomjs2",
   "version": "2.0.3",
   "keywords": [
     "phantomjs",
@@ -8,10 +8,10 @@
     "webkit"
   ],
   "description": "Headless WebKit with JS API",
-  "homepage": "https://github.com/KnotchLabs/phantomjs2",
+  "homepage": "https://github.com/emancu/phantomjs2",
   "repository": {
     "type": "git",
-    "url": "git://github.com/KnotchLabs/phantomjs2.git"
+    "url": "git://github.com/emancu/phantomjs2.git"
   },
   "licenses": [
     {
